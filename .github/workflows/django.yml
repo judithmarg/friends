@@ -23,4 +23,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Run Tests
       run: |
+        ls
+        cd friends
         python manage.py test
