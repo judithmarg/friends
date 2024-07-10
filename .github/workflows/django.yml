@@ -1,0 +1,19 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run Tests
+      run: |
+        cd friends
+        pip3 install --user django
+        python manage.py test
